@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
+import { Listbox, ListboxButton, ListboxOptions, ListboxOption, Transition } from '@headlessui/react';
 import { FaMagnifyingGlass, FaHeart, FaChevronDown, FaCheck } from "react-icons/fa6";
 
 interface Props {
@@ -43,52 +43,53 @@ export const SortSearchHeader = ({
             <div className="flex items-center gap-3 w-full md:w-auto overflow-x-auto md:overflow-visible p-1 pb-2 md:p-0 md:pb-0 scrollbar-hide">
                 <div className="w-48 relative">
                     <Listbox value={sortOption} onChange={setSortOption}>
-                        <div className="relative">
-                            <Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-black/40 py-2.5 pl-4 pr-10 text-left text-sm text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-primary/50 hover:bg-white/10 transition-colors">
-                                <span className="block truncate">{selectedSortLabel}</span>
-                                <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-                                    <FaChevronDown
-                                        className="h-3 w-3 text-gray-400"
-                                        aria-hidden="true"
-                                    />
-                                </span>
-                            </Listbox.Button>
-                            <Transition
-                                as={Fragment}
-                                leave="transition ease-in duration-100"
-                                leaveFrom="opacity-100"
-                                leaveTo="opacity-0"
+                        <ListboxButton className="relative w-full cursor-pointer rounded-lg bg-black/40 py-2.5 pl-4 pr-10 text-left text-sm text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-primary/50 hover:bg-white/10 transition-colors">
+                            <span className="block truncate">{selectedSortLabel}</span>
+                            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                                <FaChevronDown
+                                    className="h-3 w-3 text-gray-400"
+                                    aria-hidden="true"
+                                />
+                            </span>
+                        </ListboxButton>
+                        <Transition
+                            as={Fragment}
+                            leave="transition ease-in duration-100"
+                            leaveFrom="opacity-100"
+                            leaveTo="opacity-0"
+                        >
+                            <ListboxOptions
+                                anchor="bottom start"
+                                className="w-(--button-width) rounded-lg bg-black/90 backdrop-blur-xl border border-white/10 py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-50 mt-1"
                             >
-                                <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-lg bg-black/90 backdrop-blur-xl border border-white/10 py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-100">
-                                    {sortOptions.map((option) => (
-                                        <Listbox.Option
-                                            key={option.value}
-                                            className={({ active }) =>
-                                                `relative cursor-default select-none py-2 pl-10 pr-4 ${active ? 'bg-white/10 text-white' : 'text-gray-300'
-                                                }`
-                                            }
-                                            value={option.value}
-                                        >
-                                            {({ selected }) => (
-                                                <>
-                                                    <span
-                                                        className={`block truncate ${selected ? 'font-medium text-primary' : 'font-normal'
-                                                            }`}
-                                                    >
-                                                        {option.label}
+                                {sortOptions.map((option) => (
+                                    <ListboxOption
+                                        key={option.value}
+                                        className={({ active }) =>
+                                            `relative cursor-default select-none py-2 pl-10 pr-4 ${active ? 'bg-white/10 text-white' : 'text-gray-300'
+                                            }`
+                                        }
+                                        value={option.value}
+                                    >
+                                        {({ selected }) => (
+                                            <>
+                                                <span
+                                                    className={`block truncate ${selected ? 'font-medium text-primary' : 'font-normal'
+                                                        }`}
+                                                >
+                                                    {option.label}
+                                                </span>
+                                                {selected ? (
+                                                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-primary">
+                                                        <FaCheck className="h-3 w-3" aria-hidden="true" />
                                                     </span>
-                                                    {selected ? (
-                                                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-primary">
-                                                            <FaCheck className="h-3 w-3" aria-hidden="true" />
-                                                        </span>
-                                                    ) : null}
-                                                </>
-                                            )}
-                                        </Listbox.Option>
-                                    ))}
-                                </Listbox.Options>
-                            </Transition>
-                        </div>
+                                                ) : null}
+                                            </>
+                                        )}
+                                    </ListboxOption>
+                                ))}
+                            </ListboxOptions>
+                        </Transition>
                     </Listbox>
                 </div>
 
