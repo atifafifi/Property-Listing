@@ -63,7 +63,7 @@ export const PropertyDetailsModal = ({ isOpen, onClose, property }: Props) => {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <div className="fixed inset-0 bg-black/25 backdrop-blur-sm" />
+                    <div className="fixed inset-0 bg-[#434E78]/25 backdrop-blur-sm" />
                 </Transition.Child>
 
                 <div className="fixed inset-0 overflow-y-auto">
@@ -77,12 +77,12 @@ export const PropertyDetailsModal = ({ isOpen, onClose, property }: Props) => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-black/80 backdrop-blur-xl border border-white/10 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-[#434E78]/90 backdrop-blur-xl border border-white/10 text-left align-middle shadow-xl transition-all">
                                 {/* Use key to force remount on property change, resetting state */}
                                 <PropertyImage key={property.id} property={property} />
                                 <button
                                     onClick={onClose}
-                                    className="absolute top-4 right-4 p-2 bg-black/40 backdrop-blur-sm rounded-full hover:bg-black/60 text-white transition-colors shadow-sm z-10"
+                                    className="absolute top-4 right-4 p-2 bg-[#434E78]/40 backdrop-blur-sm rounded-full hover:bg-[#434E78]/60 text-white transition-colors shadow-sm z-10"
                                 >
                                     <FaXmark className="text-xl" />
                                 </button>

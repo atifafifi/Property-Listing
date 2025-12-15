@@ -24,7 +24,7 @@ export const SortSearchHeader = ({
     const selectedSortLabel = sortOptions.find(opt => opt.value === sortOption)?.label || 'Sort By';
 
     return (
-        <div className="flex flex-col md:flex-row gap-4 mb-6 sticky top-20 z-40 bg-black/60 backdrop-blur-md shadow-sm p-4 rounded-xl border border-white/10 items-center justify-between">
+        <div className="flex flex-col md:flex-row gap-4 mb-6 sticky top-20 z-40 bg-[#434E78]/60 backdrop-blur-md shadow-sm p-4 rounded-xl border border-white/10 items-center justify-between">
 
             {/* Search */}
             <div className="relative w-full md:max-w-md">
@@ -34,7 +34,7 @@ export const SortSearchHeader = ({
                     aria-label="Search items by city or state"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 bg-black/40 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-white placeholder-gray-500 transition-shadow"
+                    className="w-full pl-10 pr-4 py-2.5 bg-[#434E78]/40 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-white placeholder-gray-300 transition-shadow"
                 />
                 <FaMagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             </div>
@@ -43,7 +43,7 @@ export const SortSearchHeader = ({
             <div className="flex items-center gap-3 w-full md:w-auto overflow-x-auto md:overflow-visible p-1 pb-2 md:p-0 md:pb-0 scrollbar-hide">
                 <div className="w-48 relative">
                     <Listbox value={sortOption} onChange={setSortOption}>
-                        <ListboxButton className="relative w-full cursor-pointer rounded-lg bg-black/40 py-2.5 pl-4 pr-10 text-left text-sm text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-primary/50 hover:bg-white/10 transition-colors">
+                        <ListboxButton className="relative w-full cursor-pointer rounded-lg bg-[#434E78]/40 py-2.5 pl-4 pr-10 text-left text-sm text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-primary/50 hover:bg-white/10 transition-colors">
                             <span className="block truncate">{selectedSortLabel}</span>
                             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                                 <FaChevronDown
@@ -60,7 +60,7 @@ export const SortSearchHeader = ({
                         >
                             <ListboxOptions
                                 anchor="bottom start"
-                                className="w-(--button-width) rounded-lg bg-black/90 backdrop-blur-xl border border-white/10 py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-50 mt-1"
+                                className="w-(--button-width) rounded-lg bg-[#434E78]/90 backdrop-blur-xl border border-white/10 py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-50 mt-1"
                             >
                                 {sortOptions.map((option) => (
                                     <ListboxOption

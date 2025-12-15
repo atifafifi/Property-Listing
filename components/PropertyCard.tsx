@@ -48,7 +48,7 @@ export const PropertyCard = ({ property, onClick }: Props) => {
                 {isLoadingBuffer && !hasError && (
                     <div className="absolute inset-0 bg-gray-200 animate-pulse" />
                 )}
-                <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded-md text-xs font-semibold uppercase tracking-wider text-white border border-white/10 shadow-sm z-10">
+                <div className="absolute top-2 left-2 bg-[#434E78]/60 backdrop-blur-md px-2 py-1 rounded-md text-xs font-semibold uppercase tracking-wider text-white border border-white/10 shadow-sm z-10">
                     {property.type}
                 </div>
             </div>

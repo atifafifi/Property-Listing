@@ -41,7 +41,7 @@ export const FilterSidebar = ({
                         aria-label="Minimum Price"
                         value={minPrice}
                         onChange={(e) => setMinPrice(e.target.value ? Number(e.target.value) : '')}
-                        className="w-full px-3 py-2 bg-black/20 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm appearance-none placeholder-gray-500"
+                        className="w-full px-3 py-2 bg-[#434E78]/20 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm appearance-none placeholder-gray-500"
                     />
                     <input
                         type="number"
@@ -49,7 +49,7 @@ export const FilterSidebar = ({
                         aria-label="Maximum Price"
                         value={maxPrice}
                         onChange={(e) => setMaxPrice(e.target.value ? Number(e.target.value) : '')}
-                        className="w-full px-3 py-2 bg-black/20 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm appearance-none placeholder-gray-500"
+                        className="w-full px-3 py-2 bg-[#434E78]/20 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm appearance-none placeholder-gray-500"
                     />
                 </div>
             </div>
@@ -66,8 +66,8 @@ export const FilterSidebar = ({
                             return (
                                 <label key={type} className="flex items-center gap-3 cursor-pointer group select-none py-1">
                                     <div className={`w-5 h-5 rounded flex items-center justify-center border transition-all duration-200 ${isSelected
-                                        ? 'bg-primary border-primary shadow-[0_0_10px_rgba(217,70,239,0.3)]'
-                                        : 'bg-black/40 border-white/20 group-hover:border-white/40 group-hover:bg-white/5'
+                                        ? 'bg-primary border-primary shadow-[0_0_10px_rgba(233,127,74,0.4)]'
+                                        : 'bg-[#434E78]/40 border-white/20 group-hover:border-white/40 group-hover:bg-white/5'
                                         }`}>
                                         <FaCheck className={`text-[10px] text-black transform transition-all duration-200 ${isSelected ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
                                             }`} />

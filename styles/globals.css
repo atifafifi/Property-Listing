@@ -1,22 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #d946ef;
-    /* Neon Purple/Fuchsia */
-    --color-primary-dark: #c026d3;
-    /* Darker Fuchsia */
-    --color-secondary: #8b5cf6;
-    /* Violet */
-    --color-pale-cream: #0f172a;
-    /* Dark blue/slate for cards */
+    /* Retro Coastal Palette */
+    --color-primary: #E97F4A;
+    /* Orange - Buttons/Accents */
+    --color-primary-dark: #D36A35;
+    /* Darker Orange */
+    --color-secondary: #F7E396;
+    /* Cream - Accents */
+    --color-navy: #434E78;
+    /* Brand Navy */
+    --color-slate: #607B8F;
+    /* Brand Slate */
+
+    /* UI Semantic Colors */
+    --color-surface-hover: #434E78;
+    /* Navy for hover states */
     --color-charcoal-gray: #f8fafc;
-    /* Light text */
-    --color-surface-hover: #1e293b;
+    /* Keep for text */
 }
 
 :root {
-    --background: #020617;
-    /* Very dark slate/black */
+    --background: #1e2538;
+    /* Dark Navy Background */
     --foreground: #f8fafc;
 }
 
