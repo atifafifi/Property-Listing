@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #d946ef;
+    /* Neon Purple/Fuchsia */
+    --color-primary-dark: #c026d3;
+    /* Darker Fuchsia */
+    --color-secondary: #8b5cf6;
+    /* Violet */
+    --color-pale-cream: #0f172a;
+    /* Dark blue/slate for cards */
+    --color-charcoal-gray: #f8fafc;
+    /* Light text */
+    --color-surface-hover: #1e293b;
+}
+
+:root {
+    --background: #020617;
+    /* Very dark slate/black */
+    --foreground: #f8fafc;
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+}
