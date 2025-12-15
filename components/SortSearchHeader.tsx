@@ -40,8 +40,8 @@ export const SortSearchHeader = ({
             </div>
 
             {/* Controls */}
-            <div className="flex items-center gap-3 w-full md:w-auto overflow-x-auto md:overflow-visible p-1 pb-2 md:p-0 md:pb-0 scrollbar-hide">
-                <div className="w-48 relative">
+            <div className="flex flex-wrap md:flex-nowrap items-center gap-3 w-full md:w-auto p-1 md:p-0">
+                <div className="relative flex-1 min-w-[140px] md:w-48">
                     <Listbox value={sortOption} onChange={setSortOption}>
                         <ListboxButton className="relative w-full cursor-pointer rounded-lg bg-[#434E78]/40 py-2.5 pl-4 pr-10 text-left text-sm text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-primary/50 hover:bg-white/10 transition-colors">
                             <span className="block truncate">{selectedSortLabel}</span>
@@ -93,25 +93,27 @@ export const SortSearchHeader = ({
                     </Listbox>
                 </div>
 
-                <button
-                    onClick={onSaveSearch}
-                    className="flex items-center gap-2 px-4 py-2.5 bg-white/10 border border-white/20 backdrop-blur-sm text-white hover:bg-white/20 rounded-full transition-colors text-sm font-semibold whitespace-nowrap"
-                >
-                    <FaHeart className="text-primary" />
-                    Save
-                </button>
+                <div className="flex items-center gap-2">
+                    <button
+                        onClick={onSaveSearch}
+                        className="flex items-center gap-2 px-4 py-2.5 bg-white/10 border border-white/20 backdrop-blur-sm text-white hover:bg-white/20 rounded-full transition-colors text-sm font-semibold whitespace-nowrap"
+                    >
+                        <FaHeart className="text-primary" />
+                        Save
+                    </button>
 
-                <button
-                    onClick={openSavedSearches}
-                    className="flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:text-white rounded-full transition-colors text-sm font-semibold whitespace-nowrap relative"
-                >
-                    Saved
-                    {savedSearchesCount > 0 && (
-                        <span className="absolute -top-1 -right-1 flex min-w-[16px] h-4 px-1 items-center justify-center rounded-full bg-primary text-[10px] text-black font-bold shadow-sm">
-                            {savedSearchesCount}
-                        </span>
-                    )}
-                </button>
+                    <button
+                        onClick={openSavedSearches}
+                        className="flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:text-white rounded-full transition-colors text-sm font-semibold whitespace-nowrap relative"
+                    >
+                        Saved
+                        {savedSearchesCount > 0 && (
+                            <span className="absolute -top-1 -right-1 flex min-w-[16px] h-4 px-1 items-center justify-center rounded-full bg-primary text-[10px] text-black font-bold shadow-sm">
+                                {savedSearchesCount}
+                            </span>
+                        )}
+                    </button>
+                </div>
             </div>
         </div>
     );

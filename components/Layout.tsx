@@ -34,7 +34,7 @@ export const Layout = ({ children, title = "Atsen Property Listing", navAction }
                             {/* Logo Section */}
                             <div className="shrink-0 flex items-center gap-2">
                                 <Link href="/" className="hover:opacity-80 transition-opacity">
-                                    <div className="h-10 w-64 flex items-center">
+                                    <div className="h-8 w-32 sm:h-10 sm:w-48 md:w-64 flex items-center">
                                         <Logo className="h-full w-full" />
                                     </div>
                                 </Link>
@@ -63,10 +63,10 @@ export const Layout = ({ children, title = "Atsen Property Listing", navAction }
                                 {navAction ? (
                                     <Link
                                         href={navAction.href}
-                                        className="px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(233,127,74,0.4)] transition-all duration-300 shadow-sm text-sm flex items-center gap-2 backdrop-blur-sm group"
+                                        className="px-3 sm:px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(233,127,74,0.4)] transition-all duration-300 shadow-sm text-sm flex items-center gap-2 backdrop-blur-sm group"
                                     >
                                         <span className="group-hover:-translate-x-1 transition-transform">{navAction.icon}</span>
-                                        <span>{navAction.label}</span>
+                                        <span className="hidden sm:inline">{navAction.label}</span>
                                     </Link>
                                 ) : (
                                     <Link href="/browse" className="px-6 py-2.5 rounded-full bg-primary/20 border border-primary/50 text-white font-semibold hover:bg-primary/30 hover:shadow-[0_0_20px_rgba(233,127,74,0.5)] transition-all duration-300 shadow-sm text-sm backdrop-blur-sm">
