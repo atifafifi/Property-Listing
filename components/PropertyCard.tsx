@@ -25,6 +25,8 @@ export const PropertyCard = ({ property, onClick }: Props) => {
             onClick={onClick}
             className={`bg-white/5 backdrop-blur-md rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-white/10 flex flex-col h-full group hover:-translate-y-2 hover:shadow-primary/20 relative z-0 hover:z-10 ${onClick ? 'cursor-pointer' : ''}`}
         >
+            {/* hasError used to check if the image is accesible from the API Request*/}
+            {/* if the image link have Access Denied and cannot be displayed then it will show Image Unavailable*/}
             <div className="relative h-48 w-full bg-white/5 overflow-hidden">
                 {hasError ? (
                     <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400">

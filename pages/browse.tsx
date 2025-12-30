@@ -145,6 +145,7 @@ export default function Browse({ initialProperties, error }: Props) {
         const updated = [...savedSearches, newSave];
         setSavedSearches(updated);
         localStorage.setItem('propertyGenie_savedSearches', JSON.stringify(updated));
+        //Use swal.fire for showing the success message
         Swal.fire({
             title: 'Search Saved!',
             text: 'Your search criteria have been saved successfully.',
@@ -156,6 +157,7 @@ export default function Browse({ initialProperties, error }: Props) {
     const clearSavedSearches = () => {
         setSavedSearches([]);
         localStorage.removeItem('propertyGenie_savedSearches');
+        //Swal.fire for showing the success message
         Swal.fire({
             toast: true,
             position: 'top-end',
@@ -189,7 +191,7 @@ export default function Browse({ initialProperties, error }: Props) {
             <div className="lg:hidden mb-4">
                 <button
                     onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
-                    className="w-full py-2 bg-white/10 border border-white/20 rounded-full font-semibold text-white flex items-center justify-center gap-2 shadow-sm backdrop-blur-md hover:bg-white/20 transition-all"
+                    className="w-full py-2 bg-white/10 border border-white/20 rounded-lg font-semibold text-white flex items-center justify-center gap-2 shadow-sm backdrop-blur-md hover:bg-white/20 transition-all"
                 >
                     <span>{isMobileFilterOpen ? 'Hide Filters' : 'Show Filters'}</span>
                     <span className="bg-primary/20 text-white px-2 py-0.5 rounded-full text-xs">
@@ -259,7 +261,7 @@ export default function Browse({ initialProperties, error }: Props) {
                     {errorMessage && (
                         <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg flex items-center justify-between">
                             <span>{errorMessage}</span>
-                            <button onClick={() => window.location.reload()} className="text-sm font-semibold hover:underline bg-white/20 px-3 py-1 rounded-full">Retry</button>
+                            <button onClick={() => window.location.reload()} className="text-sm font-semibold hover:underline bg-white/20 px-3 py-1 rounded-lg">Retry</button>
                         </div>
                     )}
 
@@ -299,9 +301,10 @@ export default function Browse({ initialProperties, error }: Props) {
                     {/* Pagination Controls */}
                     <div className="mt-12 flex justify-center gap-4">
                         <button
+                            //Disabled the button if the page is the first page 
                             disabled={page === 1 || loading}
                             onClick={() => loadPage(page - 1)}
-                            className="px-6 py-2 bg-white/10 border border-white/20 rounded-full text-white disabled:opacity-50 hover:bg-white/20 font-medium shadow-sm transition-colors"
+                            className="px-6 py-2 bg-white/10 border border-white/20 rounded-lg text-white disabled:opacity-50 hover:bg-white/20 font-medium shadow-sm transition-colors"
                         >
                             Previous
                         </button>
@@ -309,9 +312,10 @@ export default function Browse({ initialProperties, error }: Props) {
                             Page {page}
                         </span>
                         <button
+                            //Disabled the next button if it is the last page
                             disabled={!hasMore || loading}
                             onClick={() => loadPage(page + 1)}
-                            className="px-6 py-2 bg-white/10 border border-white/20 rounded-full text-white disabled:opacity-50 hover:bg-white/20 font-medium shadow-sm transition-all"
+                            className="px-6 py-2 bg-white/10 border border-white/20 rounded-lg text-white disabled:opacity-50 hover:bg-white/20 font-medium shadow-sm transition-all"
                         >
                             Next
                         </button>

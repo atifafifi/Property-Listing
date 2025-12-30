@@ -37,12 +37,12 @@ export default function Welcome() {
                     <div className="flex flex-wrap gap-4">
                         <Link
                             href="/browse"
-                            className="group flex items-center gap-3 px-8 py-4 bg-white/10 border border-white/20 backdrop-blur-sm text-white rounded-full font-bold text-lg hover:bg-white/20 transition-all shadow-sm"
+                            className="group flex items-center gap-3 px-6 py-3 sm:px-8 sm:py-4 bg-white/10 border border-white/20 backdrop-blur-sm text-white rounded-full font-bold text-base sm:text-lg hover:bg-white/20 transition-all shadow-sm"
                         >
                             Get Started
                             <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                         </Link>
-                        <Link href="/about" className="px-8 py-4 bg-white/5 border border-white/10 backdrop-blur-sm text-gray-300 rounded-full font-bold text-lg hover:bg-white/10 hover:text-white transition-colors flex items-center justify-center">
+                        <Link href="/about" className="px-6 py-3 sm:px-8 sm:py-4 bg-white/5 border border-white/10 backdrop-blur-sm text-gray-300 rounded-full font-bold text-base sm:text-lg hover:bg-white/10 hover:text-white transition-colors flex items-center justify-center">
                             Learn More
                         </Link>
                     </div>

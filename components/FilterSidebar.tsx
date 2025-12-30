@@ -1,14 +1,15 @@
 import React from 'react';
 import { FaCheck } from 'react-icons/fa6';
 
+//Props interface for the filter sidebar
 interface Props {
-    minPrice: number | '';
-    maxPrice: number | '';
-    setMinPrice: (val: number | '') => void;
-    setMaxPrice: (val: number | '') => void;
-    selectedTypes: string[];
-    toggleType: (type: string) => void;
-    availableTypes: string[];
+    minPrice: number | ''; //Minimum price value
+    maxPrice: number | ''; //Maximum price value
+    setMinPrice: (val: number | '') => void; //Set minimum price value
+    setMaxPrice: (val: number | '') => void; //Set maximum price value
+    selectedTypes: string[]; //Selected property types
+    toggleType: (type: string) => void; //Toggle property type
+    availableTypes: string[]; //Available property types
     onReset: () => void;
     isOpen?: boolean; // Mobile toggle state
     onClose?: () => void; // Mobile close handler
